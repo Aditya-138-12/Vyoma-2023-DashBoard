@@ -1,0 +1,508 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+<style>
+
+.side_div{position:fixed; height:100%; width:10vw; left:0vw; top:0vw; background-color:#89B9AD; overflow-y:scroll;}
+.side_div::-webkit-scrollbar{
+	display:none;
+}
+
+.space_quiz{position:absolute; height:3vw; width:8.7vw; left:0.5vw; top:1vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer;}
+.space_quiz_p{position:absolute; font-size:1.2vw; color:black; left:1.4vw; top:-0.5vw;}
+
+.poster_presentation{position:absolute; height:4.7vw; width:8.7vw; left:0.5vw; top:5vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer; text-align:center;}
+.poster_presentation_p{position:absolute; font-size:1.2vw; color:black; left:0vw; top:-0.5vw;}
+
+.model_making{position:absolute; height:3vw; width:8.7vw; left:0.5vw; top:10.7vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer;}
+.model_making_p{position:absolute; font-size:1.2vw; color:black; left:0.8vw; top:-0.5vw;}
+
+.aerogami{position:absolute; height:3vw; width:8.7vw; left:0.5vw; top:14.7vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer;}
+.aerogami_p{position:absolute; font-size:1.2vw; color:black; left:1.8vw; top:-0.5vw;}
+
+.blind_ballon_blast{position:absolute; height:4.7vw; width:8.7vw; left:0.5vw; top:18.7vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer; text-align:center;}
+.blind_ballon_blast_p{position:absolute; font-size:1.2vw; color:black; left:0vw; top:-0.3vw;}
+
+.j_jump_fest{position:absolute; height:3vw; width:8.7vw; left:0.5vw; top:24.3vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer; text-align:center;}
+.j_jump_fest_p{font-size:1.2vw; color:black; left:0.35vw; margin-top:0.8vw;}
+
+.blow_ballon{position:absolute; height:3vw; width:8.7vw; left:0.5vw; top:28.3vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer; text-align:center;}
+.blow_ballon_p{font-size:1.2vw; color:black; left:0vw; margin-top:0.75vw;}
+
+.catch_the_ball{position:absolute; height:3vw; width:8.7vw; left:0.5vw; top:32.3vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer; text-align:center;}
+.catch_the_ball_p{font-size:1.2vw; color:black; left:0vw; margin-top:0.75vw;}
+
+.gully_cricket{position:absolute; height:3vw; width:8.7vw; left:0.5vw; top:36.3vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer; text-align:center;}
+.gully_cricket_p{font-size:1.2vw; color:black; left:0vw; margin-top:0.75vw;}
+
+.ball_in_basket{position:absolute; height:3vw; width:8.7vw; left:0.5vw; top:40.3vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer; text-align:center;}
+.ball_in_basket_p{font-size:1.2vw; color:black; left:0vw; margin-top:0.75vw;}
+
+.fun_zone{position:absolute; height:3vw; width:8.7vw; left:0.5vw; top:44.3vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer; text-align:center;}
+.fun_zone_p{font-size:1.2vw; color:black; left:0vw; margin-top:0.75vw;}
+
+.guess_movie{position:absolute; height:3vw; width:8.7vw; left:0.5vw; top:48.3vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer; text-align:center;}
+.guess_movie_p{font-size:1.2vw; color:black; left:0vw; margin-top:0.75vw;}
+
+.brick_walk{position:absolute; height:3vw; width:8.7vw; left:0.5vw; top:52.3vw; background-color:#FFEBD8; border-radius:0.5vw; cursor:pointer; text-align:center;}
+.brick_walk_p{font-size:1.2vw; color:black; left:0vw; margin-top:0.75vw; margin-bottom:20vw;}
+
+.empty{position:absolute; height:1vw; width:1vw; top:56vw; left:0vw;}
+.top_div_header{position:fixed; height:5vw; width:90%; top:0vw; right:0vw; background-color:#89B9AD; z-index:1000;}
+
+.search_bar{position:absolute; top:1.2vw; right:35vw; height:2.5vw; width:20vw; background-color:white; border-radius:2vw;}
+.search{position:absolute; color:black; font-size:3vw; top:0.8vw; left:0.8vw;}
+.search_text{position:absolute; height:2vw; width:17vw; left:2.2vw; top:0.2vw; border:none; background-color:white; font-size:0.9vw;}
+.search_text:focus{outline:none;}
+
+.headings{position:absolute; top:5vw; right:0vw; width:90%; height:3.2vw; background-color:;}
+.heading_name{display:inline-block; font-size:1.6vw; color:black; margin-left:2vw; margin-top:1vw;}
+.heading_usn{display:inline-block; font-size:1.6vw; color:black; margin-left:18vw; margin-top:1vw;}
+.heading_dept{display:inline-block; font-size:1.6vw; color:black; margin-left:12vw; margin-top:1vw;}
+.heading_events{display:inline-block; font-size:1.6vw; color:black; margin-left:18vw; margin-top:1vw;}
+.hr_1{width:97%; margin-top:-1vw;}
+
+.main_content{position:absolute; right:0vw; height:81.2%; width:90%; background-color:; top:9vw; overflow-y:scroll;}
+
+/*.cont_1{margin-top:0vw; margin-left:0.1vw; margin-bottom:1vw; width:99.5%; height:2vw; background-color:; border:0.1vw solid black;}
+.cont_1_name{display:inline-block; font-size:1.5vw; margin-top:0.1vw; margin-left:0.6vw;}
+.cont_1_usn{position:absolute; top:-1.3vw; left:21.5vw; font-size:1.5vw;}
+.cont_1_dept{display:inline; font-size:1.5vw; margin-top:0.1vw; margin-left:9.5vw;}
+.cont_1_selected_events{display:inline-block; font-size:1.8vw; margin-left:52vw; margin-top:-3.5vw;}*/
+
+.search_below{display:none; position:absolute; height:15vw; width:20vw; top:4vw; left:45vw; z-index:1000; background-color:rgba(255,255,255,0.95); box-shadow:0vw .1vw 1vw 0.1vw rgba(0,0,0,0.5); overflow-y:auto;}
+.search_below::-webkit-scrollbar{display:none;}
+
+/*.search_below_div{margin-left:0.5vw; width:95%; margin-top:-1vw; height:2.5vw; box-shadow:0px 0px 3px 0.0001px black; align-items:center; text-align:center; margin-bottom:1vw;}
+.search_below_name_p{position:relative; font-size:1.5vw; top:0.3vw;}*/
+
+</style>
+</head>
+<body>
+
+<div class="side_div">
+	<div class="space_quiz"><p class="space_quiz_p">Space Quiz</p></div>
+	
+	<div class="poster_presentation"><p class="poster_presentation_p">Poster Presentation</p></div>
+	
+	<div class="model_making"><p class="model_making_p">Model Making</p></div>
+	
+	<div class="aerogami"><p class="aerogami_p">Aerogami</p></div>
+	
+	<div class="blind_ballon_blast"><p class="blind_ballon_blast_p">Blind Ballon Blast</p></div>
+	
+	<div class="j_jump_fest"><p class="j_jump_fest_p">Jalebi Jump Fest</p></div>
+	
+	<div class="blow_ballon"><p class="blow_ballon_p">Blow Ballon</p></div>
+	
+	<div class="catch_the_ball"><p class="catch_the_ball_p">Catch The Ball</p></div>
+	
+	<div class="gully_cricket"><p class="gully_cricket_p">Gully Cricket</p></div>
+	
+	<div class="ball_in_basket"><p class="ball_in_basket_p">Ball In Basket</p></div>
+	
+	<div class="fun_zone"><p class="fun_zone_p">Fun Zone</p></div>
+	
+	<div class="guess_movie"><p class="guess_movie_p">Guess Movie</p></div>
+	
+	<div class="brick_walk"><p class="brick_walk_p">Brick Walk</p></div>
+	
+	<div class="empty"></div>
+	
+</div>
+
+
+<div class="top_div_header">
+	<div class="search_bar">
+		
+		<svg class="search" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+		
+		<input id="search_text" class="search_text" type="text" name="search_text" placeholder="Search From Database Unique Student">
+		
+	</div>
+</div>
+
+<div class="search_below" id="search_below">
+	<!--<div class="search_below_div">
+		<center><p class="search_below_name_p">Aditya Saroha</p></center>
+	</div>-->
+</div>
+
+<div class="headings">
+	<p class="heading_name">Name</p>
+	<p class="heading_usn">USN</p>
+	<p class="heading_dept">Dept.</p>
+	<p class="heading_events">Events Selected</p>
+	<hr class="hr_1">
+</div>
+
+
+<div class="main_content"  id="main_content">
+	
+	<!--<div class="cont_1">
+		<p class="cont_1_name">Aditya Saroha</p>
+		<div class="cont_1_usn"><p class="cont_1_usn_p">1SJ22CS003</p></div>
+		<p class="cont_1_dept">CSE</p>
+		<p class="cont_1_selected_events">Space Quiz, Poster Presentation, Model Making</p>
+	</div>-->
+</div>
+
+<!-- Include Fuse.js from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+
+
+<script type="module">
+
+let total_names = [];
+
+let total_events = [];
+
+let onvalindbcounter = 0;
+
+let user_usn = [];
+
+var out = document.getElementById("search_below");
+out.style.display="none";
+var search = document.getElementById("search_text");
+
+
+
+if(search.addEventListener("input", (e)=>{
+		//console.log(e.target.value);
+		out.style.display="block";
+		
+		const fuse = new Fuse(total_names, {
+  		shouldSort: true,
+  		threshold: 0.4,
+  		keys: ["name"],
+		});
+
+		// Function to perform a fuzzy search and return matching results
+		function searchEvents(query) {
+  		const results = fuse.search(query);
+  		return results.map(result => result.item);
+		}
+
+		// Example usage:
+		const userQuery = `${e.target.value}`; // User's search query
+		const matchingEvents = searchEvents(userQuery);
+
+		//console.log("Matching events:", matchingEvents);
+		
+		document.getElementById("search_below").innerHTML = '';
+
+		for(let i=0; i<matchingEvents.length; i++){
+		
+			var a = document.createElement("a");
+			a.href="#"+`${matchingEvents[i].replace(/\s/g, "")}`;
+			a.style.textDecoration="none";
+			a.style.color="black";
+			
+			var div = document.createElement("div");
+			div.style.marginLeft="0.5vw";
+			div.style.marginTop="-1vw";
+			div.style.width="95%";
+			div.style.height="2.5vw";
+			div.style.boxShadow="0px 0px 3px 0.0001px black";
+			div.style.alignItems="center";
+			div.style.textAlign="center";
+			div.style.marginBottom="1vw";
+			div.className=`${matchingEvents[i].replace(/\s/g, "")}`+ "##";
+			div.style.zIndex="100000";
+			
+			var p = document.createElement("p");
+			p.style.position="relative";
+			p.style.fontSize="1.5vw";
+			p.style.top="0.3vw";
+			p.innerHTML=`${matchingEvents[i]}`;
+			p.style.zIndex="-1";
+			
+			div.appendChild(p);
+			
+			document.getElementById("search_below").appendChild(div);
+			document.getElementById("search_below").appendChild(a);
+			a.appendChild(div);
+			
+		}
+		//out.innerHTML = matchingEvents;
+		if(e.target.value){out.style.display="block";}
+		else{out.style.display="none";}
+		
+	}));
+
+document.addEventListener("click", (e)=>{if(e.target.className !== "search_text"){out.style.display="none";}else if(search.value){out.style.display="block";} else{out.style.display="none";}});
+
+document.addEventListener("click", (e)=>{
+		
+		let check_search_below_class=0;
+		let user_class = e.target.className;
+		let user_class_data = '';
+		for(let i=0; i<user_class.length; i++){
+			if(user_class[i]==="#"){
+				check_search_below_class = check_search_below_class+1;
+			}		
+		}
+		if(check_search_below_class === 2){
+			user_class_data = user_class.replace(/#/g, "");
+		}
+		//console.log(user_class);
+		//console.log(check_search_below_class);
+		//console.log(user_class_data);
+		
+		if(check_search_below_class === 2){
+			let changebg = document.getElementById(user_class_data);
+			changebg.style.backgroundColor="yellow";
+		
+			setTimeout(function(){
+				let changebg = document.getElementById(user_class_data);
+				changebg.style.backgroundColor="";
+			},5000);
+		}
+		else{}
+		check_search_below_class=0;
+
+});
+
+let check_arr = [];
+
+
+	function add_items_to_main_cont(arry){
+		
+		if(check_arr !== arry){
+		
+			var mainContent = document.getElementById("main_content");
+			// Remove existing elements
+			while (mainContent.firstChild) {
+   			mainContent.removeChild(mainContent.firstChild);
+				}
+			//The only case when previous array is not equal to new array is when onvlaue function is called againg and it will be called again only when new data is added. So the Bug is fixed.
+			
+		}
+		
+		
+		arry.forEach(element => {
+			
+			total_events=[];
+			
+			if(element["TechEvents"]){element["TechEvents"].forEach(i => {total_events.push(i);});}
+			if(element["NonTechEvents"]){element["NonTechEvents"].forEach(i => {total_events.push(i);});}
+			//console.log("USN is:",element["USN"]);
+			//if(element["USN"]){user_usn.push(element["USN"]);}
+			
+			if(total_events.length <=3){
+			
+				var div = document.createElement("div");
+				div.style.marginTop="0vw";
+				div.style.marginLeft="0.1vw";
+				div.style.marginBottom="1vw";
+				div.style.width="99.5%";
+				div.style.height="2vw";
+				div.style.backgroundColor="";
+				div.style.border="0.1vw solid black";
+				div.className=element["Name"].replace(/\s/g,"");
+				div.id=element["Name"].replace(/\s/g,"");
+			
+			}
+			
+			if(total_events.length >3 && total_events.length<=6){
+			
+				var div = document.createElement("div");
+				div.style.marginTop="0vw";
+				div.style.marginLeft="0.1vw";
+				div.style.marginBottom="1vw";
+				div.style.width="99.5%";
+				div.style.height="4vw";
+				div.style.backgroundColor="";
+				div.style.border="0.1vw solid black";
+				div.className=element["Name"].replace(/\s/g,"");
+				div.id=element["Name"].replace(/\s/g,"");
+			
+			}
+			
+			if(total_events.length >6 && total_events.length<=9){
+			
+				var div = document.createElement("div");
+				div.style.marginTop="0vw";
+				div.style.marginLeft="0.1vw";
+				div.style.marginBottom="1vw";
+				div.style.width="99.5%";
+				div.style.height="6vw";
+				div.style.backgroundColor="";
+				div.style.border="0.1vw solid black";
+				div.className=element["Name"].replace(/\s/g,"");
+				div.id=element["Name"].replace(/\s/g,"");
+			
+			}
+			
+			if(total_events.length >9 && total_events.length<=12){
+			
+				var div = document.createElement("div");
+				div.style.marginTop="0vw";
+				div.style.marginLeft="0.1vw";
+				div.style.marginBottom="1vw";
+				div.style.width="99.5%";
+				div.style.height="8vw";
+				div.style.backgroundColor="";
+				div.style.border="0.1vw solid black";
+				div.className=element["Name"].replace(/\s/g,"");
+				div.id=element["Name"].replace(/\s/g,"");
+			
+			}
+			
+			if(total_events.length >12){
+			
+				var div = document.createElement("div");
+				div.style.marginTop="0vw";
+				div.style.marginLeft="0.1vw";
+				div.style.marginBottom="1vw";
+				div.style.width="99.5%";
+				div.style.height="10vw";
+				div.style.backgroundColor="";
+				div.style.border="0.1vw solid black";
+				div.className=element["Name"].replace(/\s/g,"");
+				div.id=element["Name"].replace(/\s/g,"");
+			
+			}
+		
+			/*var div = document.createElement("div");
+			div.style.marginTop="0vw";
+			div.style.marginLeft="0.1vw";
+			div.style.marginBottom="1vw";
+			div.style.width="99.5%";
+			div.style.height="2vw";
+			div.style.backgroundColor="";
+			div.style.border="0.1vw solid black";*/
+		
+			var p_name = document.createElement("p");
+			p_name.style.display="inline-block";
+			p_name.style.fontSize="1.5vw";
+			p_name.style.marginTop="0.1vw";
+			p_name.style.marginLeft="0.6vw";//camel case marginLeft instead of margin-left
+			p_name.style.color="black";
+			p_name.innerHTML = element["Name"];
+			p_name.style.width="20vw";
+			
+			var p_usn = document.createElement("p");
+			p_usn.style.position="relative";
+			p_usn.style.fontSize="1.5vw";
+			p_usn.style.color="black";
+			p_usn.style.top="-4.7vw";
+			p_usn.style.left="21.5vw";
+			p_usn.innerHTML = element["USN"];
+			p_usn.style.width="8.5vw";
+			p_usn.id=`${element["USN"].replace(/\s/g,"")}`;
+			
+			var p_dept = document.createElement("p");
+			p_dept.style.position="relative";
+			p_dept.style.fontSize="1.5vw";
+			p_dept.style.color="black";
+			p_dept.style.top="-7.9vw";
+			p_dept.style.left="39.5vw";
+			p_dept.innerHTML = element["Department"];
+			p_dept.style.width="7vw";
+			
+			
+			var p_selected_events = document.createElement("p");
+			p_selected_events.style.position="relative";
+			p_selected_events.style.fontSize="1.5vw";
+			p_selected_events.style.color="black";
+			p_selected_events.style.top="-11vw";
+			p_selected_events.style.left="47vw";
+			p_selected_events.innerHTML = total_events;
+			p_selected_events.style.width="42vw";
+			
+		
+		
+			div.appendChild(p_name);
+			div.appendChild(p_usn);
+			div.appendChild(p_dept);
+			div.appendChild(p_selected_events);
+		
+			document.getElementById("main_content").appendChild(div);
+			
+		});
+		console.log(total_events);
+	}
+	
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAvZtTyXsD5X-wK7wZJmTkl9MljRGjLKoU",
+    authDomain: "vyomadb.firebaseapp.com",
+    databaseURL: "https://vyomadb-default-rtdb.firebaseio.com",
+    projectId: "vyomadb",
+    storageBucket: "vyomadb.appspot.com",
+    messagingSenderId: "481692697386",
+    appId: "1:481692697386:web:0f84203e6b0fbf90d7d453"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  
+  import {getDatabase, ref, child, onValue, get} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+  
+  const db = getDatabase();
+  
+  function GetAllDataOnce(){
+  
+  	const dbref = ref(db);
+  	
+  	get(child(dbref, "Participants"))
+  	.then((snapshot)=>{
+  		
+  		var ParticipantUserss = [];
+  		
+  		snapshot.forEach(childSnapshot => {
+  			ParticipantUserss.push(childSnapshot.val());
+  			
+  		});
+  	
+  	for(let i=0; i < ParticipantUserss.length; i++){
+  			total_names.push(ParticipantUserss[i]["Name"]);
+  	}
+  	
+  	console.log(ParticipantUserss);
+  	console.log("Names", total_names);
+
+  	});
+  }
+ 
+  
+  function GetAllDataRealtime(){
+  	
+  	const dbref = ref(db, "Participants");	
+  	
+  	onValue(dbref, (snapshot)=>{
+  		total_names=[];
+  			
+  		var ParticipantUsers = [];
+  		
+  		snapshot.forEach(childSnapshot =>{
+  			ParticipantUsers.push(childSnapshot.val());
+  			
+  		});		
+  		add_items_to_main_cont(ParticipantUsers);
+  		for(let i=0; i < ParticipantUsers.length; i++){
+  				total_names.push(ParticipantUsers[i]["Name"]);
+  			}
+  		
+  		console.log("ParticipantUsers \n",ParticipantUsers);
+  		console.log("Names", total_names);
+  		
+  	})
+  	
+  }
+  
+  //GetAllDataOnce();
+  window.onload=GetAllDataRealtime();
+  
+
+  
+</script>
+
+</body>
+</html>
